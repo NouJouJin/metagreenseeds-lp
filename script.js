@@ -111,6 +111,34 @@ function initFAQAccordion() {
 }
 
 // ===================================
+// クイズのインタラクション
+// ===================================
+function initQuizInteraction() {
+    const quizOptions = document.querySelectorAll('.quiz-option');
+    const feedbackElement = document.getElementById('quiz-feedback');
+    
+    if (!quizOptions.length || !feedbackElement) return;
+
+    quizOptions.forEach(button => {
+        button.addEventListener('click', function() {
+            // 他のボタンの選択状態をリセット
+            quizOptions.forEach(btn => btn.style.borderWidth = '2px');
+
+            // クリックしたボタンを強調
+            this.style.borderWidth = '4px';
+
+            if (this.textContent === 'NFT') {
+                feedbackElement.textContent = '🎉 大正解！これがNFTです！コミュニティでは毎日こんなクイズが出ますよ！';
+                feedbackElement.className = 'quiz-feedback correct';
+            } else {
+                feedbackElement.textContent = '🤔 惜しい！もう一度考えてみよう！';
+                feedbackElement.className = 'quiz-feedback incorrect';
+            }
+        });
+    });
+}
+
+// ===================================
 // スムーススクロール
 // ===================================
 function initSmoothScroll() {
@@ -320,6 +348,9 @@ function init() {
     
     // FAQアコーディオン
     initFAQAccordion();
+
+     // クイズのインタラクションを追加
+    initQuizInteraction(); // ← この行を追加
     
     // スムーススクロール
     initSmoothScroll();
@@ -554,4 +585,5 @@ window.addEventListener('load', function() {
 // ===================================
 // エクスポート（モジュール化する場合）
 // ===================================
+
 // export { init, animateValue, typeWriter };
