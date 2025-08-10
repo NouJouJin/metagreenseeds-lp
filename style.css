@@ -755,14 +755,18 @@ footer {
         flex-direction: column;
     }
 
+   
     .concern-list,
     .solution-cards,
     .point-activities {
         grid-template-columns: 1fr;
     }
 
+    /* .hero のスタイルをここにまとめる */
     .hero {
         margin-top: 60px;
+        text-align: center; /* モバイルでは全体を中央寄せに */
+        min-height: 80vh; /* 少し高さを抑える */
     }
 
     .concerns,
@@ -774,4 +778,22 @@ footer {
         padding: 2rem 1.5rem;
     }
 
+    /* モバイルではグラデーションを全体に薄くかける */
+    .hero::before {
+        background: rgba(0, 0, 0, 0.4);
+    }
+    
+    .hero-content {
+        max-width: 100%; /* 横幅の制限を解除 */
+        text-align: center; /* テキストを中央寄せに戻す */
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .hero .subtitle {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+    }
 }
+
