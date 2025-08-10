@@ -52,7 +52,6 @@
                 <img src="https://metagri-labo.com/wp-content/uploads/2025/06/7b4279d2e6a9adb876529df2fcc013c1.png" alt="Metagri研究所 ロゴ" class="logo-image">
             </a>
             
-            <!-- ↓↓↓ このブロックをcontainerの中に移動させます ↓↓↓ -->
             <div class="header-actions">
                 <nav class="header-nav">
                     <a href="#faq">よくある質問</a>
@@ -138,6 +137,22 @@
                 <span>毎日クイズ正解</span>
                 <span class="point-value">1pt</span>
             </div>
+<!-- ↓↓↓ ここから追加 ↓↓↓ -->
+<div class="quiz-challenge-container fade-in">
+    <p>クイズはこんな感じ！<br>👇 タップして挑戦してみよう 👇</p>
+    <div class="quiz-box" id="quiz-box">
+        <div class="quiz-question">
+            <strong>Q.</strong> Web3の世界で、デジタルアートや会員権などの唯一無二の価値を証明する技術のことを何という？
+        </div>
+        <div class="quiz-options">
+            <button class="quiz-option">NFT</button>
+            <button class="quiz-option">SNS</button>
+            <button class="quiz-option">DX</button>
+        </div>
+        <div class="quiz-feedback" id="quiz-feedback"></div>
+    </div>
+</div>
+            
             <div class="activity-item">
                 <span class="activity-icon">🙋</span>
                 <span>自己紹介</span>
@@ -165,10 +180,18 @@
     <section class="goals fade-in">
         <h2 class="section-title" style="color: white;">あなたの目標を達成しよう！</h2>
         
-        <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
-            <h3 style="color: var(--accent-yellow); margin-bottom: 1rem;">🎁 最初の目標：『参加賞NFT』をゲット！(10pt)</h3>
-            <p>まずは10ポイントを目指して、コミュニティ参加の証をゲットしよう！</p>
-        </div>
+<!-- ↓↓↓ このブロックを丸ごと修正 ↓↓↓ -->
+<div class="first-goal-container fade-in">
+    <div class="first-goal-image">
+        <img src="http://metagri-labo.com/wp-content/uploads/2025/08/359b9e64b93d05d00f6d2edd442615f2.png" alt="MetaGreen Seeds 参加賞NFT">
+        <div class="nft-label">参加賞NFT</div>
+    </div>
+    <div class="first-goal-text">
+        <h3 style="color: var(--accent-yellow); margin-bottom: 1rem;">🎁 最初の目標：『参加賞NFT』をゲット！(10pt)</h3>
+        <p>まずは10ポイントを目指して、コミュニティ参加の証を手に入れよう！挨拶やクイズへの挑戦だけでも、すぐに達成できる最初のマイルストーンです。</p>
+    </div>
+</div>
+<!-- ↑↑↑ ここまで修正 ↑↑↑ -->
 
         <h3 style="color: white; text-align: center; margin: 2rem 0;">🎯 本格的なゴール：『コミュニティ会員証NFT』を無料で手に入れよう！</h3>
         
@@ -396,6 +419,7 @@
 </body>
 
 </html>
+
 
 
 
