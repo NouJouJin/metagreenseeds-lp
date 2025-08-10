@@ -1,0 +1,767 @@
+/* ===================================
+   MetaGreen Seeds - Stylesheet
+   =================================== */
+
+/* リセット & 基本設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS変数定義 */
+:root {
+    --primary-green: #4CAF50;
+    --dark-green: #2E7D32;
+    --light-green: #81C784;
+    --accent-yellow: #FFD54F;
+    --accent-orange: #FFB74D;
+    --text-dark: #212121;
+    --text-light: #757575;
+    --bg-light: #F5F5F5;
+    --white: #FFFFFF;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-hover: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* ベース設定 */
+body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* ===================================
+   ヘッダー
+   =================================== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-image {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+/* ===================================
+   ボタン
+   =================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(76, 175, 80, 0.4);
+}
+
+/* ===================================
+   ファーストビュー
+   =================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.3"/></svg>') repeat;
+    background-size: 50px 50px;
+    animation: float 20s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    padding: 2rem;
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero .subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 2rem;
+}
+
+.member-count {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.member-count strong {
+    font-size: 1.5rem;
+    color: var(--accent-yellow);
+}
+
+/* ===================================
+   セクション共通
+   =================================== */
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 3rem;
+    color: var(--dark-green);
+    position: relative;
+}
+
+.section-title::after {
+    content: '🌱';
+    display: block;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+/* ===================================
+   悩みセクション
+   =================================== */
+.concerns {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem auto;
+    box-shadow: var(--shadow);
+}
+
+.concern-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.concern-item {
+    padding: 1.5rem;
+    background: var(--bg-light);
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-green);
+    transition: transform 0.3s ease;
+}
+
+.concern-item:hover {
+    transform: translateX(10px);
+}
+
+/* ===================================
+   解決策セクション
+   =================================== */
+.solutions {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem auto;
+}
+
+.solution-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.solution-card {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--accent-yellow) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.solution-card:hover::before {
+    opacity: 0.1;
+}
+
+.solution-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.solution-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.solution-card h3 {
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+}
+
+/* ===================================
+   ポイントシステム
+   =================================== */
+.point-system {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem auto;
+}
+
+.point-activities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--bg-light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+    background: var(--light-green);
+    transform: scale(1.05);
+}
+
+.activity-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.point-value {
+    margin-left: auto;
+    background: var(--primary-green);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* ===================================
+   ゴール（NFT獲得）
+   =================================== */
+.goals {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem auto;
+    color: white;
+}
+
+.progress-ladder {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.progress-step {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin: 1rem;
+    flex: 1;
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+.progress-step:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.2);
+}
+
+.progress-step.highlight {
+    background: rgba(255,215,79,0.3);
+    border: 2px solid var(--accent-yellow);
+}
+
+.discount-badge {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-yellow);
+    margin-bottom: 10px;
+}
+
+/* ===================================
+   参加ステップ
+   =================================== */
+.steps {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem auto;
+}
+
+.step-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+    min-width: 200px;
+}
+
+.step::after {
+    content: '→';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: var(--primary-green);
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+.step-number {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: var(--primary-green);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* ===================================
+   FAQ
+   =================================== */
+.faq {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem auto;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
+}
+
+.faq-question {
+    font-weight: bold;
+    color: var(--dark-green);
+    cursor: pointer;
+    padding: 1rem;
+    background: var(--bg-light);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question:hover {
+    background: var(--light-green);
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 1rem;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 1rem;
+}
+
+.faq-answer a {
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+.faq-answer a:hover {
+    text-decoration: underline;
+}
+
+/* ===================================
+   CTA（最終誘導）
+   =================================== */
+.final-cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    border-radius: 20px;
+    margin: 2rem auto;
+    color: white;
+}
+
+.final-cta h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+}
+
+.cta-button-large {
+    display: inline-block;
+    padding: 20px 50px;
+    background: white;
+    color: var(--dark-green);
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.cta-button-large:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+/* ===================================
+   フッター
+   =================================== */
+footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 3rem 2rem 1rem;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo .logo-image {
+    filter: brightness(0) invert(1);
+}
+
+.social-links {
+    margin: 2rem 0;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    color: var(--accent-yellow);
+}
+
+.footer-links {
+    margin: 2rem 0;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    color: #888;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+}
+
+/* ===================================
+   パーティクルエフェクト
+   =================================== */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    background: var(--accent-yellow);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: floatParticle 15s infinite;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ===================================
+   ローディング画面
+   =================================== */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.seed-animation {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    animation: seedGrow 2s ease infinite;
+}
+
+@keyframes seedGrow {
+    0% { transform: scale(0.8) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(180deg); }
+    100% { transform: scale(0.8) rotate(360deg); }
+}
+
+.seed-animation::before {
+    content: '🌱';
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ===================================
+   スクロールアニメーション
+   =================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===================================
+   追加アニメーション
+   =================================== */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 30px rgba(76, 175, 80, 0.6);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+}
+
+/* ===================================
+   レスポンシブデザイン
+   =================================== */
+@media (max-width: 768px) {
+    header .container {
+        padding: 1rem;
+    }
+
+    .logo-image {
+        height: 30px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+
+    .step-container {
+        flex-direction: column;
+    }
+
+    .step::after {
+        display: none;
+    }
+
+    .progress-ladder {
+        flex-direction: column;
+    }
+
+    .concern-list,
+    .solution-cards,
+    .point-activities {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        margin-top: 60px;
+    }
+
+    .concerns,
+    .solutions,
+    .point-system,
+    .goals,
+    .steps,
+    .faq {
+        padding: 2rem 1.5rem;
+    }
+}
