@@ -94,86 +94,60 @@ header .container {
 /* ===================================
    ファーストビュー
    =================================== */
+/* ===================================
+   ファーストビュー
+   =================================== */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background-image: url('http://metagri-labo.com/wp-content/uploads/2025/08/8d18cf0f6a58fa7da49307aa40e56959.png');
-    background-size: cover; /* 画面に合わせて画像をカバー */
-    background-position: center; /* 画像の中央を基準に表示 */
-    background-repeat: no-repeat;
-    margin-top: 70px; /* ヘッダーの高さ分下げる */
+    /* heroセクションはコンテナとして機能し、背景色はbodyから継承 */
+    padding-top: 70px; /* 固定ヘッダー分のスペースを確保 */
+}
+
+.hero-visual {
+    line-height: 0; /* 画像下の余分な隙間を削除 */
+}
+
+.hero-visual img {
+    width: 100%;
+    height: auto;
+    display: block; /* imgをブロック要素に */
+}
+
+.hero-message {
+    background: var(--white); /* 白背景で清潔感を出す */
+    text-align: center;
     padding: 4rem 2rem;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-/* 背景画像の上に薄いグラデーションを重ねてテキストを読みやすくする */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%);
-    z-index: 1;
-}
-
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    position: relative;
-    z-index: 2; /* グラデーションの上に配置 */
-}
-
-.hero-content {
-    max-width: 50%; /* テキストエリアを左半分に限定 */
-    text-align: left; /* テキストを左寄せに */
-    color: white;
-    animation: fadeInUp 1s ease;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero h1 {
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
-    color: white;
+.hero-message h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    color: var(--text-dark); /* テキスト色を濃い色に */
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* 影を少し濃くする */
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
-.hero .subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    color: rgba(255,255,255,0.95);
+.hero-message .subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    color: var(--text-light); /* テキスト色を少し薄い色に */
     margin-bottom: 2rem;
-    max-width: 550px; /* サブタイトルの最大幅を設定 */
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.member-count {
+.hero-message .member-count {
     display: inline-block;
-    background: rgba(255,255,255,0.15);
+    background: #f0f4f8; /* 背景色を調整 */
     padding: 10px 20px;
     border-radius: 50px;
-    color: white;
+    color: var(--text-dark); /* テキスト色を濃い色に */
     margin-bottom: 2.5rem;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #dce4ec;
 }
 
-.member-count strong {
+.hero-message .member-count strong {
     font-size: 1.5rem;
-    color: var(--accent-yellow);
+    color: var(--primary-green); /* 強調色は緑に */
 }
 
 /* ===================================
@@ -796,4 +770,5 @@ footer {
         font-size: clamp(0.9rem, 4vw, 1.1rem);
     }
 }
+
 
