@@ -54,7 +54,7 @@
             
             <div class="header-actions">
                 <nav class="header-nav">
-                    <a href="#faq">よくある質問</a>
+                     <a href="#faq" class="btn btn-secondary">よくある質問</a>
                 </nav>
                 <a href="https://discord.gg/hyw3AkKa8e" target="_blank" class="btn btn-primary">今すぐコミュニティに参加する</a>
             </div>
@@ -120,12 +120,16 @@
         </div>
     </section>
 
+    <!-- index.html -->
+
     <!-- ポイントシステム -->
     <section class="point-system fade-in">
         <h2 class="section-title">ポイントはどうやって貯めるの？</h2>
         <p style="text-align: center; font-size: 1.2rem; color: var(--primary-green); margin-bottom: 2rem;">
             難しいことは一切なし！あなたの『毎日の活動』がポイントに変わります
         </p>
+
+        <!-- ポイント一覧のグリッド -->
         <div class="point-activities">
             <div class="activity-item">
                 <span class="activity-icon">👋</span>
@@ -137,22 +141,6 @@
                 <span>毎日クイズ正解</span>
                 <span class="point-value">1pt</span>
             </div>
-<!-- ↓↓↓ ここから追加 ↓↓↓ -->
-<div class="quiz-challenge-container fade-in">
-    <p>クイズはこんな感じ！<br>👇 タップして挑戦してみよう 👇</p>
-    <div class="quiz-box" id="quiz-box">
-        <div class="quiz-question">
-            <strong>Q.</strong> Web3の世界で、デジタルアートや会員権などの唯一無二の価値を証明する技術のことを何という？
-        </div>
-        <div class="quiz-options">
-            <button class="quiz-option">NFT</button>
-            <button class="quiz-option">SNS</button>
-            <button class="quiz-option">DX</button>
-        </div>
-        <div class="quiz-feedback" id="quiz-feedback"></div>
-    </div>
-</div>
-            
             <div class="activity-item">
                 <span class="activity-icon">🙋</span>
                 <span>自己紹介</span>
@@ -174,8 +162,26 @@
                 <span class="point-value">1pt</span>
             </div>
         </div>
-    </section>
+        <!-- ポイント一覧のグリッドはここまで -->
 
+        <!-- ↓↓↓ クイズ体験コーナーをグリッドの外に移動 ↓↓↓ -->
+        <div class="quiz-challenge-container fade-in">
+            <p>クイズはこんな感じ！<br>👇 タップして挑戦してみよう 👇</p>
+            <div class="quiz-box" id="quiz-box">
+                <div class="quiz-question">
+                    <strong>Q.</strong> Web3の世界で、デジタルアートや会員権などの唯一無二の価値を証明する技術のことを何という？
+                </div>
+                <div class="quiz-options">
+                    <button class="quiz-option">NFT</button>
+                    <button class="quiz-option">SNS</button>
+                    <button class="quiz-option">DX</button>
+                </div>
+                <div class="quiz-feedback" id="quiz-feedback"></div>
+            </div>
+        </div>
+        <!-- ↑↑↑ ここまでがクイズ体験コーナー ↑↑↑ -->
+    </section>
+    
     <!-- ゴール（NFT獲得） -->
     <section class="goals fade-in">
         <h2 class="section-title" style="color: white;">あなたの目標を達成しよう！</h2>
@@ -270,10 +276,6 @@
         </p>
     </section>
 
-<!-- 例：ヘッダーにFAQへのリンクを追加する場合 -->
-<nav>
-    <a href="#faq">よくある質問</a>
-</nav>
     <!-- FAQ -->
     <section id="faq" class="faq fade-in">
         <h2 class="section-title">よくある質問</h2>
@@ -419,6 +421,7 @@
 </body>
 
 </html>
+
 
 
 
