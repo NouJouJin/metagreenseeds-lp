@@ -307,10 +307,122 @@ section {
     border-radius: 20px;
     font-weight: bold;
 }
+.quiz-challenge-container {
+    margin-top: 3rem;
+    text-align: center;
+    background: #e8f5e9; /* 薄い緑色 */
+    padding: 2rem;
+    border-radius: 15px;
+}
 
+.quiz-challenge-container p {
+    font-weight: bold;
+    color: var(--dark-green);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.quiz-box {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.quiz-question {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.quiz-option {
+    padding: 10px 20px;
+    border: 2px solid var(--primary-green);
+    background: var(--white);
+    color: var(--primary-green);
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quiz-option:hover {
+    background: var(--primary-green);
+    color: var(--white);
+}
+
+.quiz-feedback {
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 5px;
+    min-height: 30px; /* フィードバック表示前のガタツキ防止 */
+}
+
+.quiz-feedback.correct {
+    color: #2e7d32;
+    background-color: #c8e6c9;
+}
+
+.quiz-feedback.incorrect {
+    color: #c62828;
+    background-color: #ffcdd2;
+}
 /* ===================================
    ゴール（NFT獲得）
    =================================== */
+.first-goal-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.first-goal-image {
+    flex-shrink: 0;
+    position: relative;
+}
+
+.first-goal-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.nft-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .first-goal-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .first-goal-image img {
+        width: 150px;
+        height: 150px;
+    }
+}
 .goals {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 20px;
@@ -770,5 +882,6 @@ footer {
         font-size: clamp(0.9rem, 4vw, 1.1rem);
     }
 }
+
 
 
