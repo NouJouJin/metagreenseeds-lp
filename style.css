@@ -90,10 +90,21 @@ header .container {
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(76, 175, 80, 0.4);
 }
+/* ↓↓↓ ここから追加 ↓↓↓ */
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+    /* プライマリーボタンと高さを合わせるための微調整 */
+    padding: 10px 28px; 
+}
 
-/* ===================================
-   ファーストビュー
-   =================================== */
+.btn-secondary:hover {
+    background-color: var(--primary-green);
+    color: white;
+    transform: translateY(-2px);
+}
+
 /* ===================================
    ファーストビュー
    =================================== */
@@ -882,6 +893,7 @@ footer {
         font-size: clamp(0.9rem, 4vw, 1.1rem);
     }
 }
+
 
 
 
