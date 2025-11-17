@@ -334,6 +334,24 @@ function trackEvent(category, action, label) {
 }
 
 // ===================================
+// 詳細情報の展開/折りたたみ
+// ===================================
+function toggleDetails(button) {
+    const card = button.closest('.solution-card');
+    const details = card.querySelector('.solution-details');
+
+    if (details.classList.contains('hidden')) {
+        details.classList.remove('hidden');
+        button.textContent = '閉じる ▲';
+        button.classList.add('expanded');
+    } else {
+        details.classList.add('hidden');
+        button.textContent = 'もっと詳しく ▼';
+        button.classList.remove('expanded');
+    }
+}
+
+// ===================================
 // メイン初期化関数
 // ===================================
 function init() {
